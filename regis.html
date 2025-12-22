@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm()
+        {
+            let fullname = document.getElementById("FULLNAME").value;
+            let username = document.getElementById("Username").value;
+            let email = document.getElementById("EMAIL").value;
+            let address = document.getElementById("ADDRESS").value;
+            let contact_no = document.getElementById("CONTACTNO").value;
+            let pwd = document.getElementById("PASSWORD").value;
+            let confirm_pwd = document.getElementById("CONFIRMPWD").value;
+
+            if (fullname === "")
+            {   
+                alert("Fullname must not be empty");
+                return false;
+            }
+
+            if (username === "")
+            {
+                alert("Set your username");
+                return false; 
+            }
+
+            if (email === "")
+            {   
+                alert("Email must not be empty");
+                return false;
+            }
+        
+            if (address === "")
+            {   
+                alert("address must not be empty");
+                return false;
+            }
+
+            if (contact_no === "")
+            {   
+                alert("Contact number must not be empty");
+                return false;
+            }
+
+            if (contact_no.length < 10)
+            {   
+                alert("Contact number must be atleast of 10 digits");
+                return false;
+            }
+
+            if (pwd === "")
+            {   
+                alert("Password must not be empty");
+                return false;
+            }
+
+            if (pwd.length < 6)
+            {   
+                alert("Password must be atleast of 6 characters");
+                return false;
+            }       
+            
+            if (confirm_pwd === "")
+            {   
+                alert("Confirm Password must not be empty");
+                return false;
+            } 
+
+            if (confirm_pwd != pwd )
+            {   
+                alert("Password and confirm password does not match");
+                return false;
+            } 
+            return true;           
+        }
+    </script>
+
+    <style>
+        body
+        {
+            background-color: lightsteelblue;
+            background-image: url(regisbg.png);
+            height: 100vh;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-direction: column;
+        }
+
+        .form-box
+        {
+            background: #ffffff;
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+        }
+        
+        .nav-link
+        {
+            color: #333;
+            padding: 5px 10px;
+            transition: 0.3ease;
+        }
+
+        .nav-link:hover
+        {
+            color: #007bff;
+            text-decoration: underline;
+            letter-spacing: 1px;
+        }
+
+        form
+        {
+            padding: 20px;
+        }
+
+        input, textarea, button
+        {
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .form-buttons
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media(min-width: 768px)
+        {
+            .form-buttons
+            {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand">
+        <div class="container">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><h5><b><u>HOME</b></u></h5></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="regis.html" class="nav-link"><h5><b><u>REGISTRATION</b></u></h5></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link"><h5><b><u>LOGIN</b></u></h5></a>
+                </li>                
+
+                <li class="nav-item">
+                    <a href="blog.html" class="nav-link"><h5><b><u>BLOG</b></u></h5></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link"><h5><b><u>ABOUT US</b></u></h5></a>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="form-box">
+                <h1 class="text-center text-primary" style="margin-bottom: 30px;">
+                    <u>CREATE NEW ACCOUNT</u>
+                </h1>
+                <form onsubmit="return validateForm()">
+
+                    <div>
+                        <b><label for="">FULL NAME: </label></b>
+                        <input type="text" id="FULLNAME" style="margin-bottom: 10px;" class="form-control" placeholder="Enter your Full Name">
+                    </div>
+
+                    <div>
+                        <b><label for="">USERNAME: </label></b>
+                        <input type="text" id="Username" style="margin-bottom: 10px;" class="form-control" placeholder="Set your Username">
+                    </div>
+
+                    <div>
+                        <b><label for="">EMAIL: </label></b>
+                        <input type="email" id="EMAIL" style="margin-bottom: 10px;" class="form-control" placeholder="Enter your email">
+                    </div>
+
+                    <div>
+                        <b><label for="">ADDRESS: </label></b>
+                        <textarea  id="ADDRESS" rows="2" style="margin-bottom: 10px;" class="form-control" placeholder="Enter your Address"></textarea>
+                    </div>
+                    <div>
+                        <b><label for="">CONTACT NO: </label></b>
+                        <input type="tel" id="CONTACTNO" pattern="[0-9]{10}" maxlength="10" style="margin-bottom: 10px;" class="form-control" placeholder="Enter Contact Number">
+                    </div>
+                    <div>
+                        <b><label for="text">PASSWORD: </label></b>
+                        <input type="password" id="PASSWORD" style="margin-bottom: 10px;" class="form-control" placeholder="Set Password">
+                    </div>
+
+                  <div>
+                        <b><label for="">CONFIRM PASSWORD: </label></b>
+                        <input type="password" id="CONFIRMPWD" style="margin-bottom: 10px;" class="form-control" placeholder="Enter Confirm Password">
+                </div>
+
+                <div class="text-center ">
+                    <button type="submit" class=" btn btn-primary" style="font-size: x-large; border-radius: 10px; border-width: 7px; margin-top: 5px; margin-bottom: 12px; margin-left: 7px;">SUBMIT</button>
+                    <button type="reset" class=" btn btn-primary" style="font-size: x-large; border-radius: 10px; border-width: 7px; margin-top: 5px; margin-bottom: 12px; margin-left: 7px;">RESET</button>
+                </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

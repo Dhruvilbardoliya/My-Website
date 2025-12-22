@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <style>
+         
+         body
+         {
+            background-color: sandybrown;
+            background-image: url(website\ bg.png);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+         }
+
+         .container
+         {
+            width: 100%;
+            padding: 15px;
+         }
+
+         .navbar ul
+         {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+         }
+
+         @media(min-width: 768px)
+         {
+            .navbar ul 
+            {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+         }
+
+         .hero
+         {
+            min-height: 60vh;
+            padding: 40px 15px;
+            text-align: center;
+         }
+
+         .hero-buttons
+         {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+         }
+
+         @media(min-width: 768px)
+         {
+            .hero-buttons
+            {
+                flex-direction: row;
+                justify-content: center;
+            }
+         }
+
+        .nav-link
+        {
+            color: #333;
+            padding: 5px 10px;
+            transition: 0.3ease;
+        }
+
+        .nav-link:hover
+        {
+            color: #007bff;
+            text-decoration: underline;
+            letter-spacing: 1px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand font-weight-bold" href="#"><h4>My Website</h4></a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><h5><u>HOME</u></h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="regis.html"><h5><u>REGISTRATION</u></h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><h5><u>LOGIN</u></h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><h5><u>BLOG</u></h5></a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><h5><u>ABOUT US</u></h5></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="hero d-flex align-items-center">
+            <div class="container text-center">
+                <h1 class="Display-3"><b><u>Welcome To My Website</b></u></h1>
+                <p class="lead text-muted mb-4">
+                    <h4>A simple demo website built using HTML, CSS and Bootstrap</h4>
+                </p>
+                <a href="regis.html" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="blog.html" class="btn btn-dark btn-lg">Explore our Blog</a>
+            </div>
+        </section>
+    </body>
+</html>
